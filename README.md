@@ -51,17 +51,23 @@ const ElementSizeExample = () => {
   const [windowHeight, windowWidth] = useElementResize();
 
   // height and width of browser window with execution of a callback
-  const [windowHeightCallback, windowWidthCallback] = useElementResize(null, () => {
-    console.log("Browser Window is getting resized");
-  });
+  const [windowHeightCallback, windowWidthCallback] = useElementResize(
+    null,
+    () => {
+      console.log("Browser Window is getting resized");
+    }
+  );
 
   // height and width of DOM Element reffered by ElementRef
   const [elementHeight, elementWidth] = useElementResize(ElementRef);
 
   // height and width of DOM Element reffered by ElementRef with execution of a callback
-  const [elementHeightCallback, elementWidthCallback] = useElementResize(ElementRef, () => {
-    console.log("Element is getting resized");
-  });
+  const [elementHeightCallback, elementWidthCallback] = useElementResize(
+    ElementRef,
+    () => {
+      console.log("Element is getting resized");
+    }
+  );
 
   return <div style={{ width: "100%", height: "50px" }} ref={ElementRef}></div>;
 };

@@ -1,11 +1,13 @@
 {
   "name": "@shubhaemk/use-element-resize",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A custom hook to handle a HTML element or window resize",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist"
+    "prepublish": "babel src --out-dir dist",
+    "publish": "npm publish"
+
   },
   "repository": {
     "type": "git",
