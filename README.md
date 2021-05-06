@@ -11,13 +11,13 @@ Coming Soon!
 Using `npm`
 
 ```bash
-$ npm install use-element-resize
+$ npm install @shubhaemk/use-element-resize
 ```
 
 Using `yarn`
 
 ```bash
-$ yarn add use-element-resize
+$ yarn add @shubhaemk/use-element-resize
 ```
 
 ## Features :white_check_mark:
