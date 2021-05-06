@@ -1,6 +1,6 @@
 {
   "name": "@shubhaemk/use-element-resize",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "A custom hook to handle a HTML element or window resize",
   "main": "dist/index.js",
   "scripts": {
