@@ -1,5 +1,5 @@
 {
-  "name": "use-element-resize",
+  "name": "@shubhaemk/use-element-resize",
   "version": "1.0",
   "description": "A custom hook to handle a HTML element or window resize",
   "main": "dist/index.js",
