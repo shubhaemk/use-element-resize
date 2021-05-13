@@ -9,22 +9,27 @@ import { useState, useEffect, useRef, useLayoutEffect } from "react";
  * Reference - https://medium.com/@alexandereardon/uselayouteffect-and-ssr-192986cdcf7a
  */
 
+type DimensionType = [number | undefined, number | undefined];
+type ResizeElementType = { current: HTMLElement & Window | null };
+
 const isWindow = typeof window !== "undefined";
 
 const useIsomorphicLayoutEffect = isWindow ? useLayoutEffect : useEffect;
 
 /**
- *
- * @param ref - reference of the element of which dimensions are needed
- * @param cb - a callback function to be executed when a window is resized
- * @returns [number, number]
- *
+ * 
+ * @param ref any
+ * @param cb Function
+ * @returns dimension [number | undefined, number | undefined]
  */
 
-const useElementResize = (ref, cb) => {
-  const [dimension, setDimension] = useState([undefined, undefined]);
+const useElementResize = (ref?: any, cb?: Function): DimensionType => {
+  const [dimension, setDimension] = useState<DimensionType>([
+    undefined,
+    undefined,
+  ]);
 
-  const refHandler = useRef();
+  const refHandler: ResizeElementType = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     refHandler.current = (ref && ref.current) || (isWindow && window);
@@ -32,8 +37,8 @@ const useElementResize = (ref, cb) => {
     if (refHandler.current) {
       const setWindowDimensions = () =>
         setDimension([
-          refHandler.current.clientHeight || refHandler.current.innerHeight,
-          refHandler.current.clientWidth || refHandler.current.innerWidth,
+          refHandler?.current?.clientHeight || (refHandler?.current?.innerHeight),
+          refHandler?.current?.clientWidth || refHandler?.current?.innerWidth,
         ]);
 
       setWindowDimensions();
