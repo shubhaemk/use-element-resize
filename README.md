@@ -76,7 +76,7 @@ const ElementSizeExample = () => {
 ## Features Comming soon :eyes:
 
 - Throttling of callback function.
-- TypeScript implementation
+- TypeScript implementation :white_check_mark:
 
 ## Referrences :memo:
 
